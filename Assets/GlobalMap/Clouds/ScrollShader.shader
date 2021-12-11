@@ -41,7 +41,6 @@ Shader "Unlit/ScrollShader"
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
-                fixed2 worldShift = mul(unity_ObjectToWorld,v.vertex).xz;
                 o.uv1 = v.uv;
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);                
                 
