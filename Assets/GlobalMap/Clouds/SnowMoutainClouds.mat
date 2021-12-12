@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SandClouds
+  m_Name: SnowMoutainClouds
   m_Shader: {fileID: 4800000, guid: c41ba00f5a03d2044abcdf1a70401f2f, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -20,11 +20,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 8506dbfd4bd80684db9fbbfc0617ada8, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7e2247b283d7e3346a54adf69bea46e5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
     m_Colors:
-    - _Colorize: {r: 0.7924528, g: 0.6565914, b: 0.3999644, a: 1}
-    - _Scroll: {r: 15, g: 15, b: 0, a: 0}
+    - _Colorize: {r: 0.58873266, g: 0.90460813, b: 0.9245283, a: 1}
+    - _Scroll: {r: 15, g: 30, b: 0, a: 0}
   m_BuildTextureStacks: []
