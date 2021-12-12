@@ -18,6 +18,12 @@ namespace Runes.RunesScripts
         private int _count;
         private Material _shaderMaterial;
         private BoxCollider _collider;
+        [SerializeField] private string _activateTrigger;
+        private int _activateTriggerHash;
+        [SerializeField] private string _deactivateTrigger;
+        private int _deactivateTriggerHash;
+        private int _emptryTriggerHash;
+        private int _useTriggerHash;
 
         private MaterialPropertyBlock _materialPropertyBlock;
 
@@ -41,6 +47,11 @@ namespace Runes.RunesScripts
             _animator = GetComponentInChildren<Animator>();
             _text = GetComponentInChildren<TextMesh>();
             _collider = GetComponent<BoxCollider>();
+            _activateTriggerHash = Animator.StringToHash(_activateTrigger);
+            _deactivateTriggerHash = Animator.StringToHash(_deactivateTrigger);
+            _emptryTriggerHash = Animator.StringToHash("Empty");
+            _useTriggerHash = Animator.StringToHash("Use");
+            
         }
     
         public void SetRuneCount(int count)
@@ -60,29 +71,30 @@ namespace Runes.RunesScripts
         private void DeactivateWhenZero()
         {
             _collider.enabled = false;
-            SetAnimationTrigger("Empty");
+            _animator.SetTrigger(_emptryTriggerHash);
         }
 
         public void SetTexture(Texture2D texure)
         {
-            //_renderer.GetPropertyBlock(_materialPropertyBlock);
+            _renderer.GetPropertyBlock(_materialPropertyBlock);
             _materialPropertyBlock.SetTexture("_MainTex", texure);
             _renderer.SetPropertyBlock(_materialPropertyBlock);
         }
 
         private void ActivateRune()
         {
-            SetAnimationTrigger("Activate");
+            SetAnimationTrigger(_deactivateTriggerHash, _activateTriggerHash);
         }
 
         private void DeactivateRune()
         {
-            SetAnimationTrigger("Deactivate");
+            SetAnimationTrigger(_activateTriggerHash,_deactivateTriggerHash);
         }
 
         private void OnMouseDown()
         {
             RunePressedEvent.Invoke(this);
+            _animator.SetTrigger(_useTriggerHash);
         }
 
         private void OnMouseEnter()
@@ -95,9 +107,10 @@ namespace Runes.RunesScripts
             DeactivateRune();
         }
 
-        private void SetAnimationTrigger(string trigger)
+        private void SetAnimationTrigger(int triggerToReset, int triggerToSet)
         {
-            _animator.SetTrigger(trigger);
+            _animator.ResetTrigger(triggerToReset);
+            _animator.SetTrigger(triggerToSet);
         }
     }
 }

@@ -34,11 +34,11 @@ namespace Runes.RunesScripts
                     runeContainer.SetMyRune(rune.Key);
                     runeContainer.RunePressedEvent.AddListener(UpdateCurrentRunes);
                     var contPos = runeContainerPosition;
-                    contPos.x += positionXShift * 0.5f;
-                    contPos.y -= positionYShift * 0.5f;
+                    contPos.x += positionXShift * 0.6f;
+                    contPos.y -= positionYShift * 0.8f;
                     runeContainer.transform.position = contPos;
                     positionXShift++;
-                    if (positionXShift > 3)
+                    if (positionXShift > 4)
                     {
                         positionXShift = 0;
                         positionYShift++;
