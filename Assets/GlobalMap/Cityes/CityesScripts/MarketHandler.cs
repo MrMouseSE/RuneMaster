@@ -1,11 +1,11 @@
-using MarketMenu.MarketMenuScript;
+using UiElementsScripts;
 using UnityEngine;
 
 namespace GlobalMap.Cityes.CityesScripts
 {
     public class MarketHandler : MonoBehaviour
     {
-        [SerializeField] private MarketContainer _marketContainer;
+        [SerializeField] private UiContainer uiContainer;
         
         public void ActivateMarket()
         {
@@ -19,13 +19,13 @@ namespace GlobalMap.Cityes.CityesScripts
 
         public MyButton GetCloseButton()
         {
-            return _marketContainer.CloseButton;
+            return uiContainer.CloseButton;
         }
 
         private void SwitchMarketVisibility(bool state)
         {
-            _marketContainer.UiCamera.gameObject.SetActive(state);
-            _marketContainer.UiGameObject.SetActive(state);
+            uiContainer.UiCamera.gameObject.SetActive(state);
+            uiContainer.UiGameObject.SetActive(state);
         }
     }
 }
