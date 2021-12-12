@@ -5,6 +5,7 @@ namespace Runes.RunesScripts
     public class RunePropertyContainer : ScriptableObject
     {
         public string RuneName;
+        public Texture2D RuneTexture;
         
         [Space, Tooltip("Heal")]
         public int HealValue;

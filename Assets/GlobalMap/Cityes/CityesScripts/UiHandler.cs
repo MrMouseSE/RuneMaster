@@ -3,18 +3,18 @@ using UnityEngine;
 
 namespace GlobalMap.Cityes.CityesScripts
 {
-    public class MarketHandler : MonoBehaviour
+    public class UiHandler : MonoBehaviour
     {
         [SerializeField] private UiContainer uiContainer;
         
-        public void ActivateMarket()
+        public void ActivateUiWindow()
         {
-            SwitchMarketVisibility(true);
+            SwitchUiWindowVisibility(true);
         }
 
-        public void DeactivateMarket()
+        public void DeactivateUiWindow()
         {
-            SwitchMarketVisibility(false);
+            SwitchUiWindowVisibility(false);
         }
 
         public MyButton GetCloseButton()
@@ -22,7 +22,7 @@ namespace GlobalMap.Cityes.CityesScripts
             return uiContainer.CloseButton;
         }
 
-        private void SwitchMarketVisibility(bool state)
+        private void SwitchUiWindowVisibility(bool state)
         {
             uiContainer.UiCamera.gameObject.SetActive(state);
             uiContainer.UiGameObject.SetActive(state);
