@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Otl_Rune_Container
   m_EditorClassIdentifier: 
   RuneName: Otl
+  RuneTexture: {fileID: 2800000, guid: a00543bc44e176244ad54c4284af0776, type: 3}
   HealValue: 5
   HealMultiplyer: 1.2
   HealOverTime: 0
@@ -28,3 +29,7 @@ MonoBehaviour:
   AdditionalHitPointEffect: {fileID: 0}
   DropChance: 15
   CrackChance: 20
+  Price: 0
+  CommonColor: {r: 0, g: 0, b: 0, a: 1}
+  PoweredColor: {r: 0.9843137, g: 0.33333334, b: 0.003921569, a: 1}
+  DesctroyColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}

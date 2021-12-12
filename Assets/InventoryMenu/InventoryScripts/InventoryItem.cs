@@ -6,7 +6,7 @@ namespace InventoryMenu.InventoryScripts
 {
     public class InventoryItem : MonoBehaviour
     {
-        public Sprite ItemSprite;
+        public Texture2D ItemSprite;
 
         private List<RuneItem> _itemRunes;
 

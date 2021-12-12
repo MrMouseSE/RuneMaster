@@ -6,7 +6,7 @@ namespace GlobalMap.Cityes.CityesScripts
     public class UiHandler : MonoBehaviour
     {
         [SerializeField] private UiContainer uiContainer;
-        
+
         public void ActivateUiWindow()
         {
             SwitchUiWindowVisibility(true);
@@ -20,6 +20,11 @@ namespace GlobalMap.Cityes.CityesScripts
         public MyButton GetCloseButton()
         {
             return uiContainer.CloseButton;
+        }
+
+        public UiContainer GetContainer()
+        {
+            return uiContainer;
         }
 
         private void SwitchUiWindowVisibility(bool state)

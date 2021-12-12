@@ -19,6 +19,8 @@ namespace Runes.RunesScripts
         private Material _shaderMaterial;
         private BoxCollider _collider;
 
+        private MaterialPropertyBlock _materialPropertyBlock;
+
         public RuneItemContainerEvent RunePressedEvent = new RuneItemContainerEvent();
 
         public void SetMyRune(RuneItem rune)
@@ -33,6 +35,7 @@ namespace Runes.RunesScripts
     
         private void Awake()
         {
+            _materialPropertyBlock = new MaterialPropertyBlock();
             _renderer = GetComponentInChildren<MeshRenderer>();
             _shaderMaterial = _renderer.sharedMaterial;
             _animator = GetComponentInChildren<Animator>();
@@ -62,7 +65,9 @@ namespace Runes.RunesScripts
 
         public void SetTexture(Texture2D texure)
         {
-            _shaderMaterial.mainTexture = texure;
+            //_renderer.GetPropertyBlock(_materialPropertyBlock);
+            _materialPropertyBlock.SetTexture("_MainTex", texure);
+            _renderer.SetPropertyBlock(_materialPropertyBlock);
         }
 
         private void ActivateRune()

@@ -1,24 +1,28 @@
 using InventoryMenu.InventoryScripts;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class InventorySlot : MonoBehaviour
+public class InventorySlot : MonoBehaviour, IPointerClickHandler
 {
     private InventorySlotsHandler _handler;
+    [SerializeField]
     private InventoryItem _item;
 
     public void SetHandler(InventorySlotsHandler handler)
     {
         _handler = handler;
     }
-    
-    private void OnMouseDown()
-    {
-        if (Input.GetMouseButton(1) && _item != null) _item.DestroyItem();
-        if (Input.GetMouseButton(0)) _handler.SwapSlotsItems(this);
-    }
 
     public void SetItem(InventoryItem item)
     {
+        if (item == null)
+        {
+            _item = null;
+            return;
+        }
+        var itemTransform = item.transform;
+        itemTransform.parent = transform;
+        itemTransform.localPosition = Vector3.zero;
         _item = item;
     }
 
@@ -30,5 +34,11 @@ public class InventorySlot : MonoBehaviour
     public bool IsItemSlotEmpty()
     {
         return _item == null;
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (eventData.button == PointerEventData.InputButton.Right && _item != null) _item.DestroyItem();
+        if (eventData.button == PointerEventData.InputButton.Left) _handler.SwapSlotsItems(this);
     }
 }

@@ -45,7 +45,7 @@ namespace InventoryMenu.InventoryScripts
                 if (_inventorySlots[i] == slot)
                 {
                     var firstItem = _inventorySlots[i].GetItem();
-                    var index = i++;
+                    var index = i+1;
                     if (index == _inventorySlots.Length) index = 0;
                     var secondItem = _inventorySlots[index].GetItem();
                     _inventorySlots[i].SetItem(secondItem);

@@ -4,7 +4,7 @@ namespace GlobalMap.Cityes.CityesScripts
 {
     public class InteractiveHandler : MonoBehaviour
     {
-        private UiHandler _uiHandler;
+        protected UiHandler _uiHandler;
 
         protected void Awake()
         {

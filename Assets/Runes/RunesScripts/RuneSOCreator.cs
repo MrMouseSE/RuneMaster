@@ -7,7 +7,7 @@ namespace Runes.RunesScripts
     public class RuneSoCreator : EditorWindow
     {
         private static Object _selectedRuneSprite;
-        
+
         private int _healValue = 0;
         private float _healMultiplyer = 1;
         private float _healOverTime = 0;
@@ -70,6 +70,7 @@ namespace Runes.RunesScripts
             RunePropertyContainer asset = ScriptableObject.CreateInstance<RunePropertyContainer>();
             
             asset.RuneName = _selectedRuneSprite.name;
+            asset.RuneTexture = (Texture2D)_selectedRuneSprite;
             asset.HealValue = _healValue;
             asset.HealMultiplyer = _healMultiplyer;
             asset.HealOverTime = _healOverTime;

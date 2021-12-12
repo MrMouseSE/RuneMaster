@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Alz_Rune_Container
   m_EditorClassIdentifier: 
   RuneName: Alz
+  RuneTexture: {fileID: 2800000, guid: 20b9a566d96f69c4ca5094e71ab2dd64, type: 3}
   HealValue: 0
   HealMultiplyer: 1
   HealOverTime: 0
@@ -28,3 +29,7 @@ MonoBehaviour:
   AdditionalHitPointEffect: {fileID: 0}
   DropChance: 50
   CrackChance: 2
+  Price: 0
+  CommonColor: {r: 0, g: 0, b: 0, a: 1}
+  PoweredColor: {r: 0.9843137, g: 0.33333334, b: 0.003921569, a: 1}
+  DesctroyColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
