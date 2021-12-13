@@ -46,7 +46,7 @@ Shader "Unlit/RuneShader"
                 fixed mask = tex2D(_MainTex, i.uv).a;
 
                 fixed4 col = _BlendColor;
-                col.a = mask;
+                col.a = mask * _BlendColor.a;
                 
                 return col;
             }

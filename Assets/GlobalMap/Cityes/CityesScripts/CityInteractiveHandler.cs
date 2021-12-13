@@ -1,44 +1,30 @@
-using System;
-using UnityEngine;
-
 namespace GlobalMap.Cityes.CityesScripts
 {
-    public class CityInteractiveHandler : MonoBehaviour
+    public class CityInteractiveHandler : InteractiveHandler
     {
-        private MarketHandler _marketHandler;
         private CityesHolder _cityesHolder;
         private CityStatesSwitcher _citySwitcher;
         private void Awake()
         {
-            _marketHandler = GetComponent<MarketHandler>();
+            base.Awake();
             _cityesHolder = GetComponent<CityesHolder>();
         }
 
         private void Start()
         {
-            _marketHandler.GetCloseButton().ButtonPressed.AddListener(StopInteracitonWithCity);
+            base.Start();
             foreach (var cityContainer in _cityesHolder.GetAllCityesList())
             {
-                cityContainer.MousePressed.AddListener(StartInteractionWithCity);
+                cityContainer.MousePressed.AddListener(StartInteractionWithElement);
             }
         }
-
-        private void StartInteractionWithCity()
-        {
-            _marketHandler.ActivateMarket();
-        }
-
-        private void StopInteracitonWithCity()
-        {
-            _marketHandler.DeactivateMarket();
-        }
-
+        
         private void OnDestroy()
         {
-            _marketHandler.GetCloseButton().ButtonPressed.RemoveListener(StopInteracitonWithCity);
+            base.OnDestroy();
             foreach (var cityContainer in _cityesHolder.GetAllCityesList())
             {
-                cityContainer.MousePressed.RemoveListener(StartInteractionWithCity);
+                cityContainer.MousePressed.RemoveListener(StartInteractionWithElement);
             }
         }
     }

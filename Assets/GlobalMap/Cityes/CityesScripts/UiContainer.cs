@@ -1,9 +1,9 @@
-using MarketMenu.MarketMenuScript;
+using UiElementsScripts;
 using UnityEngine;
 
 namespace GlobalMap.Cityes.CityesScripts
 {
-    public class MarketContainer : MonoBehaviour
+    public class UiContainer : MonoBehaviour
     {
         public Camera UiCamera;
         public GameObject UiGameObject;
