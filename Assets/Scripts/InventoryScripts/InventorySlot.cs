@@ -29,6 +29,12 @@ namespace InventoryScripts
 
         public InventoryItem GetItem()
         {
+            if (_item == null)
+            {
+                InventoryItem item = new InventoryItem();
+                item.SetRuneSlotCapacity(0);
+                return item;
+            }
             return _item;
         }
 

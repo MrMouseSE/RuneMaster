@@ -59,9 +59,7 @@ namespace InventoryScripts
         public bool TrySetRune(RuneItem rune)
         {
             var item = _inventorySlots[0].GetItem();
-            if (!item.CheckFreeRuneSlot()) return false;
-            item.AddRune(rune);
-            return true;
+            return item.TrySetUpRune(rune);
         }
     }
 }
