@@ -8,26 +8,26 @@ namespace InventoryScripts
         public Texture2D ItemSprite;
 
         private RuneItem[] _itemRunes;
-        private bool _hasFreeRuneSlot = true; 
 
         public void SetRuneSlotCapacity(int capacity)
         {
             _itemRunes = new RuneItem [capacity];
         }
 
-        public bool CheckFreeRuneSlot()
+        public bool TrySetUpRune(RuneItem rune)
         {
-            return _hasFreeRuneSlot;
-        }
-
-        public void AddRune(RuneItem rune)
-        {
+            bool hasEmptySlot = false;
             for (int i = 0; i < _itemRunes.Length; i++)
             {
-                _itemRunes[i] ??= rune;
-                if (i == _itemRunes.Length - 1) _hasFreeRuneSlot = false;
+                if (_itemRunes[i] != null)
+                {
+                    _itemRunes[i] = rune;
+                    hasEmptySlot = true;
+                    break;
+                }
             }
             CheckRuneWord();
+            return hasEmptySlot;
         }
 
         private void CheckRuneWord()
