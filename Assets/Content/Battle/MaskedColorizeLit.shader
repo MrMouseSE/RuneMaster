@@ -1,8 +1,7 @@
-Shader "Unlit/VC"
+Shader "Unlit/MaskedColorizeLit"
 {
     Properties
     {
-        _MainTex ("Texture", 2D) = "white" {}
         _Colorize ("Colorize", color) = (1,1,1,1)
     }
     SubShader
@@ -29,7 +28,6 @@ Shader "Unlit/VC"
 
             struct v2f
             {
-                float2 uv : TEXCOORD0;
                 SHADOW_COORDS(1)
                 float4 pos : SV_POSITION;
                 float4 color : COLOR0;
@@ -45,11 +43,10 @@ Shader "Unlit/VC"
             {
                 v2f o;
                 o.pos = UnityObjectToClipPos(v.vertex);
-                o.uv = v.uv;
                 o.colorizeMap = ceil(v.uv.y);
                 o.color = v.color;
                 half3 worldNormal = UnityObjectToWorldNormal(v.normal);
-                half nl = max(0, dot(worldNormal, _WorldSpaceLightPos0.xyz));                
+                half nl = max(0, dot(worldNormal, _WorldSpaceLightPos0.xyz));
                 o.diff = nl * _LightColor0;
                 o.ambient = ShadeSH9(half4(worldNormal,1));
                 TRANSFER_SHADOW(o)
@@ -58,8 +55,7 @@ Shader "Unlit/VC"
 
             fixed4 frag (v2f i) : SV_Target
             {
-                fixed4 col = tex2D(_MainTex, i.uv);
-                col = lerp(i.color, _Colorize,i.colorizeMap);
+                fixed4 col = lerp(i.color, _Colorize,i.colorizeMap);
                 fixed shadow = SHADOW_ATTENUATION(i);
                 col.rgb *= i.diff * shadow + i.ambient;
                 return col;

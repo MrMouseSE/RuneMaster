@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 755a04c60e8fc814cbf043a22948d450, type: 3}
+  m_Name: DemonsSpawnerLevels
+  m_EditorClassIdentifier: 
+  Levels:
+  - Level: 1
+    SpawnTime: 10
+    CommonDemonsSpawnRate: 1
+    ComonDemons:
+    - {fileID: 11400000, guid: cc8567f62b3f60047af0c2ab1c8954db, type: 2}
+    - {fileID: 11400000, guid: 559210db3630e4348ab846708a3f2138, type: 2}
+    - {fileID: 11400000, guid: 2b43219455d2fb04eae84bcc1c4c8ff0, type: 2}
+    - {fileID: 11400000, guid: a43d5b1f499db224f9b0db7707a97240, type: 2}
+    UncommonDemonsSpawnRate: 0.7
+    UncommonDemons:
+    - {fileID: 11400000, guid: afb74f709443f154c8dfa40da374d279, type: 2}
+    - {fileID: 11400000, guid: 2d1aaf13dadd6b1449d2ff127956ee3c, type: 2}
+    - {fileID: 11400000, guid: b21e20a80fd0c5647b8ab50cd1523f85, type: 2}
+    - {fileID: 11400000, guid: 1131847b826f59849a0e6b8b79df50ad, type: 2}
+    BossDemon: {fileID: 11400000, guid: 722113de8d5eab5439ac8851c254f6bf, type: 2}
+  - Level: 2
+    SpawnTime: 20
+    CommonDemonsSpawnRate: 5
+    ComonDemons:
+    - {fileID: 11400000, guid: db1001735f9f8354e868c6111e918154, type: 2}
+    - {fileID: 11400000, guid: af18255b99b2a724091ee5f4f65beb02, type: 2}
+    - {fileID: 11400000, guid: 59d23f8efc252864b981d24f42917137, type: 2}
+    - {fileID: 11400000, guid: d9e1e46b031b89e4c9b869c1a0032208, type: 2}
+    UncommonDemonsSpawnRate: 2
+    UncommonDemons:
+    - {fileID: 11400000, guid: 3195c375368864549a95bd57717de437, type: 2}
+    - {fileID: 11400000, guid: 29dc89f28054aba41a446776d99a91da, type: 2}
+    - {fileID: 11400000, guid: e2996314718bfc34da99b199e5042e03, type: 2}
+    - {fileID: 11400000, guid: dc6839d049429c8408eb56420a21527a, type: 2}
+    BossDemon: {fileID: 11400000, guid: 8f9cb04aead8bf0478290288161d71cc, type: 2}
+  - Level: 3
+    SpawnTime: 12
+    CommonDemonsSpawnRate: 8
+    ComonDemons:
+    - {fileID: 11400000, guid: a50f09cb669cccc459b12dc03f0a625c, type: 2}
+    - {fileID: 11400000, guid: b96ba50c4c0fcc142970740f49751559, type: 2}
+    - {fileID: 11400000, guid: 884a68f3026dcb040847f71facf921c6, type: 2}
+    - {fileID: 11400000, guid: dbc9b51133c6388488ab1ef442153891, type: 2}
+    UncommonDemonsSpawnRate: 3
+    UncommonDemons:
+    - {fileID: 11400000, guid: 0bd14f23c28cbad4fb5819e78368f588, type: 2}
+    - {fileID: 11400000, guid: 9e259b4145503d54cbfe9d8a3b8fa280, type: 2}
+    - {fileID: 11400000, guid: aecebec2060d5044887c08c5a1c20856, type: 2}
+    - {fileID: 11400000, guid: eb280a567bbb3854191ff2ae6cae6d41, type: 2}
+    BossDemon: {fileID: 11400000, guid: 722113de8d5eab5439ac8851c254f6bf, type: 2}

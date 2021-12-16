@@ -9,8 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5883631135710078734}
+  - component: {fileID: 507518587}
+  - component: {fileID: 362026444945268804}
   m_Layer: 0
-  m_Name: DemonHolder
+  m_Name: DemonPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,6 +33,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &507518587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8751387457155534086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29a96f78469beb469d40e5a8a05f9c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyRenderer: {fileID: 5636221436423201894}
+  Scaler: {fileID: 5883631135710078734}
+  MyAnimator: {fileID: 7858731090823015457}
+  AttackRadius: 0.5
+--- !u!65 &362026444945268804
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8751387457155534086}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 1, z: 0.4}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1001 &4351963658798125488
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44,15 +75,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9cff7c96b84e82c4e984087d8c4be581, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.36392963
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9cff7c96b84e82c4e984087d8c4be581, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.097968996
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9cff7c96b84e82c4e984087d8c4be581, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.22939157
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9cff7c96b84e82c4e984087d8c4be581, type: 3}
       propertyPath: m_LocalRotation.w
@@ -82,6 +113,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -985542389825260074, guid: 9cff7c96b84e82c4e984087d8c4be581, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e6768bbce7060cf448ac640a6f084421, type: 2}
     - target: {fileID: 919132149155446097, guid: 9cff7c96b84e82c4e984087d8c4be581, type: 3}
       propertyPath: m_Name
       value: DemonWalking
@@ -95,5 +130,15 @@ PrefabInstance:
 --- !u!4 &4318950525059937883 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9cff7c96b84e82c4e984087d8c4be581, type: 3}
+  m_PrefabInstance: {fileID: 4351963658798125488}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7858731090823015457 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 9cff7c96b84e82c4e984087d8c4be581, type: 3}
+  m_PrefabInstance: {fileID: 4351963658798125488}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &5636221436423201894 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -985542389825260074, guid: 9cff7c96b84e82c4e984087d8c4be581, type: 3}
   m_PrefabInstance: {fileID: 4351963658798125488}
   m_PrefabAsset: {fileID: 0}
