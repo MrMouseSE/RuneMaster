@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0c84383f84a6a547b3c2facad5d80d9, type: 3}
+  m_Name: UncommonDemonLevel2_water
+  m_EditorClassIdentifier: 
+  HitPoint: 99
+  Speed: 0.55
+  Resists:
+  - Type: 0
+    ResistValue: 15
+  - Type: 1
+    ResistValue: 5
+  - Type: 2
+    ResistValue: 15
+  SizeMultiplyer: 1.2
+  Colorize: {r: 0.18039216, g: 0.45490196, b: 0.6509804, a: 1}
+  RuneDropBoost: 8
