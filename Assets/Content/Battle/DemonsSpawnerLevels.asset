@@ -57,4 +57,4 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 9e259b4145503d54cbfe9d8a3b8fa280, type: 2}
     - {fileID: 11400000, guid: aecebec2060d5044887c08c5a1c20856, type: 2}
     - {fileID: 11400000, guid: eb280a567bbb3854191ff2ae6cae6d41, type: 2}
-    BossDemon: {fileID: 11400000, guid: 722113de8d5eab5439ac8851c254f6bf, type: 2}
+    BossDemon: {fileID: 11400000, guid: b883217ebc56c184c8091e199801dde3, type: 2}

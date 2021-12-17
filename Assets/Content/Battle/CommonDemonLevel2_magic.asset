@@ -22,4 +22,5 @@ MonoBehaviour:
   - Type: 2
     ResistValue: 15
   SizeMultiplyer: 0.8
-  Colorize: {r: 0.62034345, g: 0.34576362, b: 0.6603774, a: 1}
+  Colorize: {r: 0.34901962, g: 0.21568628, b: 0.32941177, a: 1}
+  RuneDropBoost: 4

@@ -11,6 +11,7 @@ namespace BattleScripts
         public Resist[] Resists;
         public float SizeMultiplyer;
         public Color Colorize;
+        public float RuneDropBoost;
     }
 }
 
