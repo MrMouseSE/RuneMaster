@@ -39,13 +39,13 @@ namespace BattleScripts
                 uncommonTimer += Time.deltaTime;
                 bossTimer -= Time.deltaTime;
 
-                if (commonTimer > 1/_currentDemonsLevel.CommonDemonsSpawnRate)
+                if (commonTimer > 1 / _currentDemonsLevel.CommonDemonsSpawnRate)
                 {
                     commonTimer = 0f;
                     SpawnEnemy(_currentDemonsLevel.GetRandomDemon(_currentDemonsLevel.ComonDemons));
                 }
 
-                if (uncommonTimer > 1/_currentDemonsLevel.UncommonDemonsSpawnRate)
+                if (uncommonTimer > 1 / _currentDemonsLevel.UncommonDemonsSpawnRate)
                 {
                     uncommonTimer = 0f;
                     SpawnEnemy(_currentDemonsLevel.GetRandomDemon(_currentDemonsLevel.UncommonDemons));
@@ -56,9 +56,10 @@ namespace BattleScripts
                     bossTimer = float.MaxValue;
                     SpawnEnemy(_currentDemonsLevel.BossDemon);
                 }
-                
+
                 yield return new WaitForEndOfFrame();
             }
+
             _gameStop = true;
         }
 
@@ -67,28 +68,26 @@ namespace BattleScripts
             if (_gameStop)
             {
                 StopCoroutine(_spawnEnemyes);
-                for (int i = 0; i < _demons.Count; i++)
-                {
-                    if (_demons[i] != null) continue;
-                    _demons.Clear();
-                    GameStoped.Invoke();
-                    _gameStop = false;
-                }
+                _demons.RemoveAll(item => item == null);
+                if (_demons.Count > 0) return;
+                _demons.Clear();
+                GameStoped.Invoke();
+                _gameStop = false;
             }
         }
 
         private void SpawnEnemy(DemonStats stats)
         {
             var demonCont = Instantiate(Demon, GetSpawnPosition(), Quaternion.identity);
-            demonCont.InitializeBySO(stats,Player);
+            demonCont.InitializeBySO(stats, Player);
             _demons.Add(demonCont);
         }
 
         private Vector3 GetSpawnPosition()
         {
-            var x_posShift = Random.Range(- SpawnArea.size.x / 2, SpawnArea.size.x / 2);
+            var x_posShift = Random.Range(-SpawnArea.size.x / 2, SpawnArea.size.x / 2);
             var z_posShift = Random.Range(-SpawnArea.size.z / 2, SpawnArea.size.z / 2);
-            var pos = new Vector3(SpawnArea.center.x + x_posShift, 0 ,SpawnArea.center.z + z_posShift);
+            var pos = new Vector3(SpawnArea.center.x + x_posShift, 0, SpawnArea.center.z + z_posShift);
             return pos;
         }
     }

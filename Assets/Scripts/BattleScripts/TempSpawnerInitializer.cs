@@ -5,10 +5,11 @@ namespace BattleScripts
     public class TempSpawnerInitializer : MonoBehaviour
     {
         public DemonsSpawner Spawner;
+        public int Level;
         
         void Start()
         {
-            Spawner.InitSpawner(1);
+            Spawner.InitSpawner(Level);
             Spawner.GameStoped.AddListener(GameEnd);
         }
 

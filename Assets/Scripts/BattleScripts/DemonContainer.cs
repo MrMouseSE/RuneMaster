@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace BattleScripts
 {
@@ -19,6 +20,7 @@ namespace BattleScripts
         private MaterialPropertyBlock _mpb;
         private Transform _myTransform;
         private Transform _player;
+        private BoxCollider _myCollider;
 
         private bool _isInitialize;
 
@@ -27,6 +29,7 @@ namespace BattleScripts
             _mpb = new MaterialPropertyBlock();
             MyRenderer.GetPropertyBlock(_mpb);
             _myTransform = transform;
+            _myCollider = GetComponent<BoxCollider>();
         }
 
         public void InitializeBySO(DemonStats so, Transform player)
@@ -79,8 +82,10 @@ namespace BattleScripts
 
         private void Die()
         {
+            _myCollider.enabled = false;
             StopMe();
             SetAnimatorTrigger("Dying");
+            MyAnimator.SetFloat("DieMult", Random.Range(0.5f,1.5f));
             StartCoroutine(BodyDesappear());
         }
 
